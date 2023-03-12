@@ -1,0 +1,92 @@
+
+Backend
+
+--- 1.Setup Express and MongoDB
+
+        1. Express
+        2. Port
+        3. Db connection
+
+--- 2.User Model - Creation
+
+        1. derive a custom Schema
+JWT,joi,joi-password-complexity,
+module.export (user model,vaidate) --> 2.compile schema to Model
+        3. Initialize a doc(Routes)
+
+--- 3.Register Route
+--- 4.Login Route
+--- 5.Import Routes
+
+FrontEnd
+
+--- 1.Create React App
+--- 2.Main Components
+--- 3.SignUp Components 
+--- 4.Main Components
+--- 5.Assign Routesszz
+
+
+Backend
+
+--- 1.Setup Express and MongoDB
+
+        require('dotenv').config()
+        require('express')
+        require('cors')  
+        assign express to app [ const app = express() ]
+
+        /// Middleware
+
+        app.use(express.json)
+        app.use(cors())
+
+        //port
+
+        const port = process.env.PORT || 8080
+        app.listen(port,() => console.log(`Server Started in ${port}`))
+
+        //MongoDB.db connection //----db.js
+
+        create a db.js 
+        mongoose.connect(ATLAS_URI,{})
+        export that module to index file
+
+--- 2.User Model - Creation
+        1.require('mongoose')
+        2.SampleSchema = new mongoose.Schema(
+            {
+                productname: {type:String},
+                price:{type:Number},
+                quantity:{type:Number}
+            }
+        )
+        3.schema.methods.generateAuthToken = fun() {
+            toekn = jwt.sign{_id:this._id},process.env.JWTPRIVATEKEY
+        }
+        4. model,validate then Import
+
+--- 3.Register Route
+
+        1.require('express').Router()
+        2.Import model,validate('../models/user')
+
+        3.router.post("/", async (req,res) => {
+                try{ validate email } catch { }
+        })
+        4
+
+--- 4.Login Route
+--- 5.Import Routes
+
+FrontEnd
+
+--- 1.Create React App
+--- 2.Main Components
+--- 3.SignUp Components 
+--- 4.Main Components
+--- 5.Assign Routesszz
+
+Authentication token
+
+postman://auth/callback?code=c7dc8e12b144c3423c28dd99a9b452a8b7955b27b9882fecac9fc91df98d79d5
